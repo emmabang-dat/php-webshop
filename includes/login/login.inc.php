@@ -20,11 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = getUser($pdo, $email);
 
         if (isEmailWrong($result)) {
-            $errors["login_incorrect"] = "Incrorect login info!";
+            $errors["login_incorrect"] = "Incorrect login info!";
         }
 
         if (!isEmailWrong($result) && isPasswordWrong($password, $result["password"])) {
-            $errors["login_incorrect"] = "Incrorect login info!";
+            $errors["login_incorrect"] = "Incorrect login info!";
         }
 
 
