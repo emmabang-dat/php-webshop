@@ -14,9 +14,10 @@ function getEmail(object $pdo, string $email)
     return $result;
 }
 
+
 function setUser(object $pdo, string $email, string $password, string $name, string $phone, string $address)
 {
-    $query = "INSERT INTO users (email, password, name, phone, address ) VALUES (:email, :password, :name, :phone, :address);";
+    $query = "INSERT INTO users (email, password, name, phone, address, role) VALUES (:email, :password, :name, :phone, :address, 'user');";
     $statement = $pdo->prepare($query);
     $statement->bindParam(":email", $email);
     $statement->bindParam(":name", $name);

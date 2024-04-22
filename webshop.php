@@ -1,6 +1,7 @@
 <?php
 require_once "includes/config_session.inc.php";
 require_once "includes/login/login_view.inc.php";
+require_once "navbar.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +14,9 @@ require_once "includes/login/login_view.inc.php";
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-sans bg-gray-200 text-gray-900 flex justify-center items-center m-0">
+<body class="bg-gray-200 text-gray-900 flex justify-center items-center m-0">
     <div class="w-1/2 flex flex-col items-center">
-        <h3 class="text-gray-800 font-semibold text-3xl my-8">
+        <h3 class="text-gray-800 font-semibold text-4xl my-8 p-24">
             <?php
             outputEmail();
             ?>
@@ -23,9 +24,7 @@ require_once "includes/login/login_view.inc.php";
 
         <h1>Webshop succesfully</h1>
 
-        <form action="includes/logout.inc.php" method="post" class="p-5 mb-5 rounded">
-            <button type="submit" class="w-full p-2 rounded bg-blue-600 text-white cursor-pointer hover:bg-blue-700">Logout</button>
-        </form>
+
     </div>
 </body>
 
