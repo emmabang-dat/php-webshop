@@ -28,15 +28,16 @@ require_once "includes/config_session.inc.php";
                     <li><a class="mr-6 text-white hover:text-gray-300 text-lg <?php if (basename($_SERVER['PHP_SELF']) == 'products.php') {
                                                                                     echo 'underline';
                                                                                 } ?>" href="products.php">Products</a></li>
-                    <?php
-                    if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
-                        echo '<li><a class="mr-6 text-white hover:text-gray-300 text-lg ';
-                        if (basename($_SERVER['PHP_SELF']) == 'admin.php') {
+                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'cart.php') {
                             echo 'underline';
-                        }
-                        echo '" href="admin.php">Administration</a></li>';
-                    }
-                    ?>
+                        } ?>>
+                        <a href="cart.php">
+                            <img src="includes/cart/MaterialSymbolsShoppingCartOutlineSharp.png" alt="Cart Icon" class="w-6 h-6 mr-6" />
+                        </a>
+                    </li>
+                    <li><a class="mr-6 text-white hover:text-gray-300 text-lg <?php if (basename($_SERVER['PHP_SELF']) == 'admin.php') {
+                                                                                    echo 'underline';
+                                                                                } ?>" href="admin.php">Administration</a></li>
                 </ul>
                 <form action="includes/logout.inc.php" method="post">
                     <button type="submit" class="p-2 rounded bg-blue-600 text-white cursor-pointer hover:bg-blue-700">Logout</button>
